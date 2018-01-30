@@ -9,7 +9,19 @@ class App extends PureComponent {
   }
 
   componentDidMount() {
-    this.setState({ blocks });
+    const url = 'http://localhost:1234/api/waterBlocks';
+    const data = {
+      method: 'POST',
+      body: JSON.stringify([1, 4, 5, 3, 6]),
+      headers: new Headers({
+        'Content-Type': 'application/json'
+      })
+    }
+    fetch(url, data)
+      .then(res => res.json())
+      .then(res => (console.log('res>>>', res), res))
+      .then(res => (this.setState({ blocks }), res))
+      .catch(console.error);
   }
   render() {
     const myBlocks = this.state.blocks.map((subArr, i) => {
