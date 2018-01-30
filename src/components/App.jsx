@@ -12,14 +12,25 @@ class App extends PureComponent {
     this.setState({ blocks });
   }
   render() {
-    console.log({ blocks })
+    const myBlocks = this.state.blocks.map((subArr, i) => {
+      return (
+        <div className='row' key={i}>{
+          subArr.map((block, k) => {
+            const color = block === 0 ? 'white'
+              : block === 1 ? 'grey'
+              : block === 2 ? 'cyan'
+              : 'black';
+            return (
+              <div className={`cell ${color}`} key={k}></div>
+            )
+          })
+        }</div>
+      )
+    });
     return (
       <div className='App'>
-        <div className='wrapper'>
-          <div className="white"></div>
-          <div className="grey"></div>
-          <div className="cyan"></div>
-          <div className="black"></div>
+        <div className='grid'>
+          {myBlocks}
         </div>
       </div>
     )
