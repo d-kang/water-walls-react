@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import '../assets/App.css';
 
+import Form from './Form';
 // import { blocks } from '../data/data';
 
 class App extends PureComponent {
@@ -8,11 +9,13 @@ class App extends PureComponent {
     blocks: [],
   }
 
-  componentDidMount() {
+  postData = (payload) => {
+
+
     const url = 'http://localhost:1234/api/waterBlocks';
     const data = {
       method: 'POST',
-      body: JSON.stringify([1, 4, 5, 3, 6]),
+      body: JSON.stringify({ payload }),
       headers: new Headers({
         'Content-Type': 'application/JSON'
       })
@@ -41,6 +44,8 @@ class App extends PureComponent {
     });
     return (
       <div className='App'>
+        <h1>Welcome To WaterBlocks</h1>
+        <Form postData={this.postData} />
         <div className='grid'>
           {myBlocks}
         </div>

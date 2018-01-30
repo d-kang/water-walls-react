@@ -1,9 +1,8 @@
 const { completeMatrix } = require('./utils/completeMatrix');
 
 const waterBlocksHandler = (req, res) => {
-  const { body } = req;
-
-  const blocks = completeMatrix(body);
+  const { payload } = req.body;
+  const blocks = completeMatrix(payload.split(','));
   res.send({ blocks });
 };
 
