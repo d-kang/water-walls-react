@@ -1,10 +1,27 @@
 import React, { PureComponent } from 'react';
 import '../assets/App.css';
-class App extends PureComponent {
 
+import { blocks } from '../data/data';
+
+class App extends PureComponent {
+  state = {
+    blocks: [],
+  }
+
+  componentDidMount() {
+    this.setState({ blocks });
+  }
   render() {
+    console.log({ blocks })
     return (
-      <div className='App'>hello!!!!!!</div>
+      <div className='App'>
+        <div className='wrapper'>
+          <div className="white"></div>
+          <div className="grey"></div>
+          <div className="cyan"></div>
+          <div className="black"></div>
+        </div>
+      </div>
     )
   }
 }

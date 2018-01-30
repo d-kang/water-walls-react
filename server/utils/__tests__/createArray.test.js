@@ -1,6 +1,5 @@
 const { createArray } = require('../createMatrix');
 
-
 describe('createArray', () => {
   test('it should return an array', () => {
     expect(Array.isArray(createArray(5))).toBe(true);
