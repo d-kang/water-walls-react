@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import '../assets/App.css';
 
-import { blocks } from '../data/data';
+// import { blocks } from '../data/data';
 
 class App extends PureComponent {
   state = {
@@ -14,13 +14,13 @@ class App extends PureComponent {
       method: 'POST',
       body: JSON.stringify([1, 4, 5, 3, 6]),
       headers: new Headers({
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/JSON'
       })
     }
     fetch(url, data)
       .then(res => res.json())
       .then(res => (console.log('res>>>', res), res))
-      .then(res => (this.setState({ blocks }), res))
+      .then(({ blocks }) => (this.setState({ blocks }), res))
       .catch(console.error);
   }
   render() {

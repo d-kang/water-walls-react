@@ -1,6 +1,10 @@
+const { completeMatrix } = require('./utils/completeMatrix');
+
 const waterBlocksHandler = (req, res) => {
-  console.log('hello');
-  res.send({hi: 'hellos'});
+  const { body } = req;
+
+  const blocks = completeMatrix(body);
+  res.send({ blocks });
 };
 
 module.exports = {
