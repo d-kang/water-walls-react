@@ -30,8 +30,8 @@ const waterBlocks = (walls) => {
     }
   }
   return {
-    waterWalls: blackWalls,
-    waterBlocksCount: storeWaterBlocks
+    waterWallsArr: blackWalls,
+    waterBlocksArr: storeWaterBlocks
   };
 };
 
