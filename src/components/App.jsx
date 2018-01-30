@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
-
+import '../assets/App.css';
 class App extends PureComponent {
 
   render() {
     return (
-      <div>hello!!!!!!</div>
+      <div className='App'>hello!!!!!!</div>
     )
   }
 }
