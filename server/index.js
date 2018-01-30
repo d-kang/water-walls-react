@@ -13,3 +13,5 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const PORT = process.env.PORT || 1234;
 
 app.listen(PORT, () => console.log(`NODE listening on http://localhost:${PORT}`));
+
+require('./routes');
