@@ -7,7 +7,7 @@ describe('generateBlocks', () => {
     const col = 10;
     const matrix = matrixFromArray([5, 3, 7, 2, 6, 4, 5, 9, 1, 2]);
     const arr = [5, 3, 7, 2, 6, 4, 5, 9, 1, 2];
-    const actual = generateBlocks(col, row, matrix, arr);
+    const actual = generateBlocks(row, col, matrix, arr);
     const expected = [
       [0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
       [0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
